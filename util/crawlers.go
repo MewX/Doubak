@@ -2,14 +2,15 @@ package util
 
 import (
 	"flag"
-	"github.com/gocolly/colly/v2"
-	"github.com/gocolly/colly/v2/queue"
-	"github.com/its-my-data/doubak/proto"
 	"log"
 	"net"
 	"net/http"
 	"strings"
 	"time"
+
+	"github.com/gocolly/colly/v2"
+	"github.com/gocolly/colly/v2/queue"
+	"github.com/its-my-data/doubak/proto"
 )
 
 const RequestTimeout = 5 * time.Minute
@@ -39,10 +40,11 @@ func NewColly() *colly.Collector {
 		}
 		cookies = c
 	}
+	log.Println("Cookies: ", cookies)
 
 	c := colly.NewCollector(
 		colly.MaxDepth(1),
-		colly.UserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36 Edg/109.0.1518.61"),
+		colly.UserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"),
 	)
 
 	c.OnError(func(r *colly.Response, err error) {

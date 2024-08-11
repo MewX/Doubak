@@ -20,8 +20,8 @@ require (
 )
 
 require (
+	github.com/PuerkitoBio/goquery v1.8.0
 	github.com/gocolly/colly/v2 v2.1.0
 	github.com/golang/protobuf v1.5.2
-	github.com/mengzhuo/cookiestxt v1.0.3
-	github.com/PuerkitoBio/goquery v1.8.0
+	github.com/mengzhuo/cookiestxt v1.0.4
 )

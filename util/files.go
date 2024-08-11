@@ -3,8 +3,6 @@ package util
 import (
 	"flag"
 	"fmt"
-	"github.com/its-my-data/doubak/proto"
-	"github.com/mengzhuo/cookiestxt"
 	"html"
 	"io/fs"
 	"log"
@@ -12,6 +10,9 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+
+	"github.com/its-my-data/doubak/proto"
+	"github.com/mengzhuo/cookiestxt"
 )
 
 const CollectorPathPrefix = "collector/"
@@ -88,6 +89,7 @@ func LoadCookiesFile(filePath string) ([]*http.Cookie, error) {
 func LoadCookiesFileToString(filePath string) (string, error) {
 	cookies, err := LoadCookiesFile(filePath)
 	if err != nil {
+		log.Fatal(err)
 		return "", nil
 	}
 
